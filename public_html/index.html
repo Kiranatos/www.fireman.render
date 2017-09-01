@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Расчёт эвакуации</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery.js" type="text/javascript"></script>
+        <script src="js/my.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            
+            <div class="shapka">
+            </div>
+            
+            <div class="wrapperProgramWindow">
+                
+                <div id="upButtons">
+                    <input type="image" src="img/buttons/1.fire.png"        id="fireID"     class="unpressed" width="30" height="30" name="" title="Создать">
+                    <input type="image" src="img/buttons/2.open.png"        id="ID"         class="unpressed" width="30" height="30" name="" title="Открыть">
+                    <input type="image" src="img/buttons/3.save.png"        id="ID"         class="unpressed" width="30" height="30" name="">
+                    <input type="image" src="img/buttons/4.print.png"       id="ID"         class="unpressed" width="30" height="30" name="">
+                    <input type="image" src="img/buttons/5.opt.png"         id="ID"          class="unpressed" width="30" height="30" name="">
+                    <input type="image" src="img/buttons/6.cancel.png"      id="ID"          class="unpressed" width="30" height="30" name="">
+                    <input type="image" src="img/buttons/7.repeat.png"      id="ID"          class="unpressed" width="30" height="30" name="">
+                    <input type="image" src="img/buttons/8.ruleplus.png"    id="ID"          class="unpressed" width="30" height="30" name="">
+                    <input type="image" src="img/buttons/9.ruleminus.png"   id="ID"          class="unpressed" width="30" height="30" name="">
+                    <input type="image" src="img/buttons/10.planplus.png"   id="ID"          class="unpressed" width="30" height="30" name="">
+                    <input type="image" src="img/buttons/11.planminus.png"  id="ID"          class="unpressed" width="30" height="30" name="">                    
+                    <select name="name56" size="1">
+                        <option>Подвал</option>
+                        <option>Этаж №1</option>
+                        <option>Этаж №2</option>
+                        <option>Этаж №3</option>
+                        <option>Этаж №4</option>
+                        <option>Этаж №5</option>
+                        <option>Этаж №6</option>
+                        <option>Этаж №7</option>
+                        <option>Этаж №8</option>
+                        <option>Этаж №9</option>
+                        <option>Этаж №10</option>		
+                    </select>
+                    <input type="image" src="img/buttons/12.delfloor.png"   id="ID"     class="unpressed" width="30" height="30" name="" title="">
+                    <input type="image" src="img/buttons/13.calc1.png"      id="ID"     class="unpressed" width="30" height="30" name="" title="">
+                    <input type="image" src="img/buttons/14.calc2.png"      id="ID"     class="unpressed" width="30" height="30" name="">
+                    <input type="image" src="img/buttons/15.calc3.png"      id="ID"     class="unpressed" width="30" height="30" name="">
+                    <input type="image" src="img/buttons/16.help.png"       id="ID"     class="unpressed" width="30" height="30" name="">
+                    <input type="image" src="img/buttons/17.helpO.png"      id="ID"     class="unpressed" width="30" height="30" name="">                    
+                </div> <!-- id="upButtons" -->
+                
+                <div id="mainPlan">                    
+                    <img src="img/plan/plan_0002.jpg" alt="План здания"/>
+                    <canvas id="idCanvas" width="900" height="600">
+                    </canvas>
+                </div> <!-- id="mainPlan" -->
+                
+                <div id="leftButtons">
+                    <input type="image" src="img/buttons/knotselect.png"    id="knotSelectID"       class="unpressed" width="30" height="30" name="" title="Выбрать узел">
+                    <input type="image" src="img/buttons/knotentrance.png"  id="knotEntranceID"     class="unpressed" width="30" height="30" name="" title="Вход">
+                    <input type="image" src="img/buttons/knot.png"          id="knotID"             class="unpressed" width="30" height="30" name="" title="Узел">
+                    <input type="image" src="img/buttons/knotline.png"      id="knotLineID"         class="unpressed" width="30" height="30" name="" title="Линия">
+                    <input type="image" src="img/buttons/knotexit.png"      id="knotExitID"         class="unpressed" width="30" height="30" name="" title="Выход">                    
+                    <input type="image" src="img/buttons/knotdelete.png"    id="knotDeleteID"       class="unpressed" width="30" height="30" name="" title="Удалить узел">
+                    <input type="image" src="img/buttons/knotparam.png"     id="knotParamID"        class="unpressed" width="30" height="30" name="" title="Параметры узла">
+                </div> <!-- id="leftButtons" -->
+                
+                
+                <div id="downStat">
+                    
+                </div> <!-- id="downStat" -->
+                
+            </div> <!-- class="wrapperProgramWindow" -->
+            
+            <div class="shapka">
+                <p>Инструкция к применению</p>
+                <p>План здания должен быть в формате растрового изображения (например, jpeg, bmp, png, gif и другие). Добавление фонового рисунка осуществляется нажатием на иконку <strong>"Добавить план здания"</strong>. После нажатия на данную иконку откроется стандартный диалог открытия файлов, где и осуществляется выбор файла изображения. После выбора файла рабочая область программы может выглядеть следующим образом: </p>
+                <p><strong>РИСУНОК</strong></p>
+                <p>Рисование схемы эвакуации осуществляется с помощью панели быстрого запуска "Палитра элементов", которая изображена на рисунке.</p>
+                <p><strong>РИСУНОК</strong></p>
+                <p>Сначала вы должны добавить начало пути эвакуации. Для этого нажмите на иконку <strong>РИСУНОК</strong>, далее переместите курсор мыши на место рабочей области, откуда начинается, по вашему мнению, эвакуация, и кликните левой кнопкой мыши (на рабочей области появится пиктограмма начала эвакуации). Таким образом можно добавлять начало каждого из потоков эвакуации. На рисунке показан пример рабочей области с размещенными на ней началами потоков.</p>
+                <strong>РИСУНОК</strong>                
+                <p>Подобным образом действуйте и для добавления окончания пути эвакуации, но сначала нажмите на иконку <strong>РИСУНОК</strong>"Выход". Помните, что множество входов может быть соединено только с одним выходом.</p>
+                <p>После того как вы создали входы и выходы, необходимо их соединить отдельными участками. Для этого используются узлы участков. Нажмите на иконку  для добавления узлов. Размещайте узлы в тех местах, где будут соединены отдельные участки пути эвакуации.</p>
+                <p>Начало и окончание потоков эвакуации, а также узлы вы можете нумеровать по собственному усмотрению, для этого в параметрах соответствующего элемента (чтобы вызвать окно параметров, щелкните два раза левой кнопкой мыши) необходимо изменить значение поля "Узел №".</p>
+                <p>Теперь настало время соединить все узлы, входы и выходы между собой. Для этого щелкните на иконке "Участок", далее нажмите левой кнопкой мыши на один из элементов схемы (при этом за курсором будет тянуться пунктирная линия), а затем на другой элемент схемы (или на пустое пространство рабочего поля). В результате этого между элементами появится зеленая линия, изображающая отдельный участок.</p>
+                <p>Обратите внимание: при отсутствии информации о длине участка программа будет отображать на участке знак вопроса. Отображение знака вопроса возможно отменить в окне настроек параметров программы.</p>
+            </div>            
+            
+            
+            
+            
+        </div> <!-- class="wrapper" -->
+    </body>
+</html>
